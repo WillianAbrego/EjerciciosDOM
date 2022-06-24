@@ -7,7 +7,7 @@ export function moveBall(e, ball, stage) {
     limitBall = $ball.getBoundingClientRect(),
     limitStage = $stage.getBoundingClientRect();
   //  console.log(e.keyCode);
-  console.log(limitBall, limitStage);
+  // console.log(limitBall, limitStage);
   // const move = (direction) => {
   //   $ball.style.transform = `translate(${x * 10}px,${y * 10}px)`;
   // };

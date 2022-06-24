@@ -1,3 +1,4 @@
+import countdown from "./cuenta_regresiva.js";
 import hamburgerMenu from "./menu_hamburgesa.js";
 import { digitalClock, alarm } from "./reloj.js";
 import { moveBall, shortcuts } from "./teclado.js";
@@ -8,6 +9,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   hamburgerMenu(".panel-btn", ".panel", ".menu a");
   digitalClock("#reloj", "#activar-reloj", "#desactivar-reloj");
   alarm("assets/assets_alarma.mp3", "#activar-alarma", "#desactivar-alarma");
+  countdown("countdown", "Jul 4, 2022 14:10:19", "Feliz Cumpleaños");
 });
 
 d.addEventListener("keydown", (e) => {
