@@ -1,5 +1,6 @@
 import scrollTopButton from "./boton_scroll.js";
 import countdown from "./cuenta_regresiva.js";
+import userDeviceInfo from "./deteccion_dispositivos.js";
 import hamburgerMenu from "./menu_hamburgesa.js";
 import responsiveMedia from "./objeto_responsive.js";
 import resposiveTester from "./prueba_resposive.js";
@@ -36,6 +37,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
     `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.2825983096104!2d-89.2244339!3d13.7013266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f6330410eacae2d%3A0xf3bd10411c7f3afb!2sRotonda%20Divino%20Salvador%20del%20Mundo!5e0!3m2!1ses!2ssv!4v1657145488102!5m2!1ses!2ssv" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`
   );
   resposiveTester("responsive-tester");
+  userDeviceInfo("user-device");
 });
 
 d.addEventListener("keydown", (e) => {
