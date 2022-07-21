@@ -1,4 +1,5 @@
 import scrollTopButton from "./boton_scroll.js";
+import slider from "./carrusel.js";
 import countdown from "./cuenta_regresiva.js";
 import userDeviceInfo from "./deteccion_dispositivos.js";
 import networkStatus from "./deteccion_red.js";
@@ -47,6 +48,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
   getGeoLocation("geolocation");
   seachFilters(".card-filter", ".card");
   draw("#winner-btn", ".player");
+  slider();
 });
 
 d.addEventListener("keydown", (e) => {
