@@ -58,3 +58,31 @@
       //console.log("esto se ejecutara siempre");
     });
 })();
+
+(() => {
+  const $fetch_async = document.getElementById("fetch-async"),
+    $fragment = document.createDocumentFragment();
+
+  async function getData() {
+    try {
+      let res = await fetch("https://jsonplaceholder.typicode.com/user"),
+        json = await res.json();
+      //if(!res.ok)throw new Error("ocurrio un error al solicitar los datos")
+      if (!res.ok) throw { status: res.status, statusText: res.statusText };
+      json.forEach((el) => {
+        const $li = document.createElement("li");
+        $li.innerHTML = `${el.name}---${el.email}---${el.phone}`;
+        $fragment.appendChild($li);
+      });
+
+      $fetch_async.appendChild($fragment);
+    } catch (err) {
+      console.log(err);
+      let message = err.statusText || "ocurrio un error";
+      $fetch_async.innerHTML = `Error ${err.status}: ${message}`;
+    } finally {
+    }
+  }
+
+  getData();
+})();
