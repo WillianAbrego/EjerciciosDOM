@@ -7,7 +7,7 @@ export default function speechReader() {
     $speechBtn = d.getElementById("speech-btn"),
     speechMessage = new SpeechSynthesisUtterance();
 
-  console.log(speechMessage);
+  //console.log(speechMessage);
   let voices = [];
 
   d.addEventListener("DOMContentLoaded", (e) => {
