@@ -65,7 +65,7 @@
 
   async function getData() {
     try {
-      let res = await fetch("https://jsonplaceholder.typicode.com/user"),
+      let res = await fetch("https://jsonplaceholder.typicode.com/users"),
         json = await res.json();
       //if(!res.ok)throw new Error("ocurrio un error al solicitar los datos")
       if (!res.ok) throw { status: res.status, statusText: res.statusText };
@@ -85,4 +85,30 @@
   }
 
   getData();
+})();
+
+(() => {
+  const $axios = document.getElementById("axios"),
+    $fragment = document.createDocumentFragment();
+
+  axios
+    .get("https://jsonplaceholder.typicode.com/users")
+    .then((res) => {
+      console.log(res);
+      let json = res.data;
+      json.forEach((el) => {
+        const $li = document.createElement("li");
+        $li.innerHTML = `${el.name}---${el.email}---${el.phone}`;
+        $fragment.appendChild($li);
+      });
+      $axios.appendChild($fragment);
+    })
+    .catch((err) => {
+      console.log(err.response);
+      let message = err.response.statusText || "ocurrio un error";
+      $axios.innerHTML = `Error ${err.response.status}: ${message}`;
+    })
+    .finally(() => {
+      console.log("esto se ejecuta siempre");
+    });
 })();
