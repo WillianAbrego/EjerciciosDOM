@@ -6,6 +6,8 @@ export function Menu() {
   <spam></spam>
   <a href="#/search">Busqueda</a>
   <spam></spam>
+  <a href="#/contacto">Contacto</a>
+  <spam></spam>
   `;
   return $menu;
 }
